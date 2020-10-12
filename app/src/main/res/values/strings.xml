@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Makan Apa</string>
+    <string name="app_name">Feed Me</string>
+    <string name="judul">Makan Apa</string>
+    <string name="subjudul">Makan Apa \n Hari Ini?</string>
+    <string name="btn_cari">Cari</string>
+    <string name="btn_home">Home</string>
+    <string name="btn_cari_menu">Cari</string>
+    <string name="btn_menu">Menu</string>
+    <string name="btn_setting">Setting</string>
+    <string name="btn_exit">Exit</string>
+    <string name="openDrawer"></string>
+    <string name="closeDrawer"></string>
 </resources>
