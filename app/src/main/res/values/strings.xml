@@ -10,4 +10,6 @@
     <string name="btn_exit">Exit</string>
     <string name="openDrawer"></string>
     <string name="closeDrawer"></string>
+    <string name ="et_menu">Menu</string>
+    <string name ="ayam">Ayam Goreng</string>
 </resources>
