@@ -12,4 +12,5 @@
     <string name="closeDrawer"></string>
     <string name ="et_menu">Menu</string>
     <string name ="ayam">Ayam Goreng</string>
+    <string name="header">Menu</string>
 </resources>

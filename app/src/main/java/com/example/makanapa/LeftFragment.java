@@ -12,11 +12,15 @@ import androidx.fragment.app.Fragment;
 public class LeftFragment extends Fragment {
 
     private static LeftFragment leftFragment;
+    private FoodListener foodListener;
+    private Presenter presenter;
 
-    public static LeftFragment newInstance(){
+    public static LeftFragment newInstance(FoodListener foodListener, Presenter presenter){
         if (leftFragment==null){
             leftFragment = new LeftFragment();
         }
+        leftFragment.foodListener = foodListener;
+        leftFragment.presenter = presenter;
         return leftFragment;
     }
 

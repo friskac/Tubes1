@@ -1,6 +1,6 @@
 package com.example.makanapa;
 
-public class MockFood {
+public class Menu {
     public static String[] foodStringArr = { "Nasi Goreng Biasa", "Nasi Goreng Telor", "Nasi Goreng Ayam",
              };
     public static Food[] foodObjectArr = {
