@@ -3,8 +3,114 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10px">
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_food_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20sp"
+        android:text="@string/header"
+        android:textColor="@color/black"
+        android:textSize="@dimen/judul_size" />
+
+    <TextView
+        android:id="@+id/tv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/menu_size"
+        android:padding="@dimen/pad_info"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:padding="@dimen/pad_info"
+        android:text="@string/des"/>
+
+    <TextView
+        android:id="@+id/tv_deskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:text="-"
+        android:paddingLeft="30sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/des"
+            android:padding="@dimen/pad_info"
+            android:text="@string/tag"
+            android:layout_weight="5"/>
+
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/des"
+            android:text="-"
+            android:padding="@dimen/pad_info"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:padding="@dimen/pad_info"
+        android:text="@string/bahan"/>
+
+    <TextView
+        android:id="@+id/tv_bahan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/des"
+        android:text="-"
+        android:paddingLeft="30sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:padding="@dimen/pad_info"
+        android:text="@string/langkah"/>
+
+    <TextView
+        android:id="@+id/tv_langkah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/des"
+        android:text="-"
+        android:paddingLeft="30sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:padding="@dimen/pad_info"
+        android:text="@string/lokasi"/>
+
+    <TextView
+        android:id="@+id/tv_lokasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:paddingLeft="30sp"/>
 
 <RelativeLayout
     android:id="@+id/relativeLayout1"

@@ -1,3 +1,7 @@
 <resources>
     <dimen name="judul_size">25sp</dimen>
+    <dimen name="menu_size">20sp</dimen>
+    <dimen name="des">18sp</dimen>
+    <dimen name="pad_info">10sp</dimen>
+    <dimen name="pad_edit">5sp</dimen>
 </resources>

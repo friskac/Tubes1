@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10px">
+    android:padding="@dimen/pad_edit">
 
     <TextView
         android:id="@+id/tv_food_menu"
@@ -18,36 +18,101 @@
         android:id="@+id/tv_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/menu_size"
+        android:padding="@dimen/pad_info"/>
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:padding="@dimen/pad_info"
+        android:text="@string/des"/>
+
+    <EditText
         android:id="@+id/tv_deskripsi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/des"
-        />
-    <TextView
-        android:id="@+id/tv_tag"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:inputType="textMultiLine"
+        android:paddingLeft="@dimen/pad_info"
+        android:hint="Tuliskan deskripsi"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tag"
-        />
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/des"
+            android:padding="@dimen/pad_info"
+            android:text="@string/tag"
+            android:layout_weight="5"/>
+
+        <EditText
+            android:id="@+id/tv_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/des"
+            android:paddingLeft="@dimen/pad_info"
+            android:hint="Tuliskan tag"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:padding="@dimen/pad_info"
+        android:text="@string/bahan"/>
+
+    <EditText
         android:id="@+id/tv_bahan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bahan"
-        />
+        android:textSize="@dimen/des"
+        android:inputType="textMultiLine"
+        android:paddingLeft="@dimen/pad_info"
+        android:hint="Tuliskan bahan-bahan"/>
+
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:padding="@dimen/pad_info"
+        android:text="@string/langkah"/>
+
+    <EditText
         android:id="@+id/tv_langkah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/langkah"
-        />
+        android:textSize="@dimen/des"
+        android:inputType="textMultiLine"
+        android:hint="Tuliskan langkah memasak"
+        android:paddingLeft="@dimen/pad_info"/>
+
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/des"
+        android:padding="@dimen/pad_info"
+        android:text="@string/lokasi"/>
+
+    <EditText
         android:id="@+id/tv_lokasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lokasi"
-        />
+        android:inputType="textMultiLine"
+        android:hint="Tulisan alamat"
+        android:paddingLeft="@dimen/pad_info"/>
 </LinearLayout>
