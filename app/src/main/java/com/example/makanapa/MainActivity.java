@@ -74,4 +74,9 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
         }
         ft.commit();
     }
+   @Override
+    public void closeApplication() {
+        this.moveTaskToBack(true);
+        this.finish();
+    }
 }

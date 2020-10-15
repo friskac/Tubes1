@@ -22,13 +22,13 @@
             android:background="@android:color/white"
             />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_cari_menu"
-            android:id="@+id/btn_cari_menu"
-            android:background="@android:color/white"
-            />
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/btn_cari_menu"-->
+<!--            android:id="@+id/btn_cari_menu"-->
+<!--            android:background="@android:color/white"-->
+<!--            />-->
 
         <Button
             android:layout_width="match_parent"
@@ -38,13 +38,13 @@
             android:background="@android:color/white"
             />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_setting"
-            android:id="@+id/btn_setting"
-            android:background="@android:color/white"
-            />
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/btn_setting"-->
+<!--            android:id="@+id/btn_setting"-->
+<!--            android:background="@android:color/white"-->
+<!--            />-->
 
         <Button
             android:layout_width="match_parent"

@@ -9,5 +9,5 @@ public class Presenter {
     public void changePage(int page){
         this.listener.changePage(page);
     }
-
+    public void closeApplication(){this.listener.closeApplication();}
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10px">
+
+    <TextView
+        android:id="@+id/tv_food_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20sp"
+        android:text="@string/header"
+        android:textColor="@color/black"
+        android:textSize="@dimen/judul_size" />
+
+    <TextView
+        android:id="@+id/tv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tv_deskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/des"
+        />
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tag"
+        />
+    <TextView
+        android:id="@+id/tv_bahan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bahan"
+        />
+    <TextView
+        android:id="@+id/tv_langkah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/langkah"
+        />
+    <TextView
+        android:id="@+id/tv_lokasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lokasi"
+        />
+</LinearLayout>

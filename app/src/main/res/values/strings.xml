@@ -13,4 +13,9 @@
     <string name ="et_menu">Menu</string>
     <string name ="ayam">Ayam Goreng</string>
     <string name="header">Menu</string>
+    <string name="des">Deskripsi : </string>
+    <string name="tag">tag : </string>
+    <string name="bahan">Bahan : </string>
+    <string name="langkah">Langkah memasak : </string>
+    <string name="lokasi">Tersedia di resto : </string>
 </resources>
