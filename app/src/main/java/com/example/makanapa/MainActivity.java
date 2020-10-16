@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
     private DrawerLayout drawer;
     private LeftFragment leftFragment;
     private MenuFragment menuFragment;
+    private AddPopupFragment addPopupFragment;
     private FoodListAdapter adapter;
     private LobbyFragment lobbyFragment;
     private Button btnCari;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
         this.adapter = new FoodListAdapter(this,this.presenter,this);
         this.lobbyFragment = LobbyFragment.newInstance(this.presenter);
         this.menuFragment = MenuFragment.newInstance(this,presenter, adapter);
+        this.addPopupFragment = AddPopupFragment.newInstance(this);
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.fragment_container, this.lobbyFragment).commit();
@@ -74,7 +76,13 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
         }
         ft.commit();
     }
-   @Override
+
+    @Override
+    public void showPopup() {
+        this.addPopupFragment.show(fragmentManager,"");
+    }
+
+    @Override
     public void closeApplication() {
         this.moveTaskToBack(true);
         this.finish();

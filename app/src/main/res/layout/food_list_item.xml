@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10px">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <TextView
             android:id="@+id/tv_food_menu"
@@ -19,42 +11,25 @@
             android:text="@string/header"
             android:textSize="@dimen/judul_size"
             android:padding="20sp"
-            android:textColor="@color/black"
-            />
-<!--        <TextView-->
-<!--            android:id="@+id/tv_food_menu1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/ayam"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textSize="@dimen/judul_size"-->
-<!--            android:padding="20sp"/>-->
+            android:textColor="@color/black" />
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/list_menu"/>
+            android:layout_height="match_parent"
+            android:id="@+id/list_menu"
+            android:layout_below="@id/tv_food_menu"/>
 
-    </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/pad_info"
+            android:id="@+id/btn_plus"
+            android:src="@android:drawable/ic_input_add"
+            android:tint="@color/colorWhite"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:borderWidth="0dp"
+            app:elevation="0dp" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:layout_gravity="bottom">
-
-        <Button
-            android:layout_alignParentRight="true"
-            android:id ="@+id/btn_plus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="+"
-            android:background="@drawable/button_bg_round"
-            android:padding="15dp"
-            android:layout_margin="20dp"
-            />
-
-    </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>

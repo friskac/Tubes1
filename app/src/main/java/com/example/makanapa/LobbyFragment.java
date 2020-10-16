@@ -30,7 +30,7 @@ public class LobbyFragment extends Fragment {
         this.btnCari.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.changePage(FoodListener.PAGE2);
+                lobbyFragment.presenter.changePage(FoodListener.PAGE2);
             }
         });
         return view;

@@ -8,15 +8,15 @@ public class Food {
     protected String langkah;
     protected String lokasi;
     protected boolean isFavourite;
-
-    public Food(String title, String des, String tag, String bahan, String langkah, String lokasi ) {
+//wadwawd
+    public Food(String title){ //String des, String tag, String bahan, String langkah, String lokasi ) {
         this.title = title;
-        this.deskripsi = des;
-        this.tag = tag;
-        this.bahan = bahan;
-        this.langkah = langkah;
-        this.lokasi = lokasi;
-        this.isFavourite = false;
+//        this.deskripsi = des;
+//        this.tag = tag;
+//        this.bahan = bahan;
+//        this.langkah = langkah;
+//        this.lokasi = lokasi;
+//        this.isFavourite = false;
     }
 
     public String getTitle() {

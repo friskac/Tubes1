@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -60,6 +61,10 @@ public class FoodListAdapter extends BaseAdapter {
         return convertView;
     }
 
+    public void randomFood(){
+        Collections.shuffle(this.listItem);
+    }
+
     private class ViewHolder implements View.OnClickListener{
         protected TextView menuTitle;
         protected ImageButton delete;
@@ -73,6 +78,7 @@ public class FoodListAdapter extends BaseAdapter {
         }
 
         public void updateView (Food food, int posisi){
+            System.out.println(food);
             this.menuTitle.setText(food.getTitle());
             this.posisi = posisi;
         }
