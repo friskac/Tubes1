@@ -5,7 +5,10 @@ public interface FoodListener {
     public static final int PAGE1 = 1;
 //    hlm menu
     public static final int PAGE2 = 2;
-    void changePage(int page);
+//    hlm info
+    public static final int PAGE3 = 3;
+    void changePage(int page, boolean isPop);
     void showPopup();
+    void setInfo(Food food);
     void closeApplication();
 }

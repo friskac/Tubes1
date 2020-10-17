@@ -8,8 +8,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import android.icu.text.IDNA;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity implements FoodListener{
 
@@ -22,20 +27,27 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
     private AddPopupFragment addPopupFragment;
     private FoodListAdapter adapter;
     private LobbyFragment lobbyFragment;
-    private Button btnCari;
+    private InfoFragment infoFragment;
+    private Stack<Integer> state;
+    private int lastState;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.state = new Stack<>();
         this.presenter = new Presenter(this);
         this.adapter = new FoodListAdapter(this,this.presenter,this);
         this.lobbyFragment = LobbyFragment.newInstance(this.presenter);
         this.menuFragment = MenuFragment.newInstance(this,presenter, adapter);
+        this.infoFragment = InfoFragment.newInstance();
         this.addPopupFragment = AddPopupFragment.newInstance(this);
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
+        ft.add(R.id.fragment_container, this.infoFragment);
+        ft.hide(this.infoFragment);
         ft.add(R.id.fragment_container, this.lobbyFragment).commit();
         this.leftFragment = LeftFragment.newInstance(this,presenter);
 
@@ -46,12 +58,17 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
         drawer.addDrawerListener(abdt);
         abdt.syncState();
 
-        this.btnCari = this.findViewById(R.id.btn_cari);
+        this.lastState = FoodListener.PAGE1;
+
     }
 
     @Override
-    public void changePage(int page) {
+    public void changePage(int page, boolean isPop) {
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
+        if(this.lastState != page && !isPop){
+            this.state.push(this.lastState);
+        }
+        this.lastState = page;
         if (page == FoodListener.PAGE1){
             if (this.lobbyFragment.isAdded()){
                 ft.show(this.lobbyFragment);
@@ -61,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
             }
             if (this.menuFragment.isAdded()){
                 ft.hide(this.menuFragment);
+            }
+            if (this.infoFragment.isAdded()) {
+                ft.hide(this.infoFragment);
             }
         }
         else if (page == FoodListener.PAGE2){
@@ -73,6 +93,23 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
             if (this.lobbyFragment.isAdded()) {
                 ft.hide(this.lobbyFragment);
             }
+            if (this.infoFragment.isAdded()) {
+                ft.hide(this.infoFragment);
+            }
+        }
+        else if (page == FoodListener.PAGE3){
+            if (this.infoFragment.isAdded()){
+                ft.show(this.infoFragment);
+            }
+            else{
+                ft.add(R.id.fragment_container,this.infoFragment).addToBackStack(null);
+            }
+            if (this.menuFragment.isAdded()) {
+                ft.hide(this.menuFragment);
+            }
+            if (this.lobbyFragment.isAdded()){
+                ft.hide(this.lobbyFragment);
+            }
         }
         ft.commit();
     }
@@ -83,8 +120,25 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
     }
 
     @Override
+    public void setInfo(Food food) {
+        FragmentTransaction ft = this.fragmentManager.beginTransaction();
+        this.infoFragment.setInfo(food);
+        ft.commit();
+    }
+
+    @Override
     public void closeApplication() {
         this.moveTaskToBack(true);
         this.finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(!this.state.isEmpty()){
+            changePage(this.state.pop(), true);
+        }
+        else {
+            closeApplication();
+        }
     }
 }

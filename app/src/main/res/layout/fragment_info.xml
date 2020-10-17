@@ -35,7 +35,6 @@
         android:id="@+id/tv_deskripsi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
         android:textSize="@dimen/des"
         android:text="-"
         android:paddingLeft="30sp"/>
@@ -109,25 +108,9 @@
         android:id="@+id/tv_lokasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/des"
         android:text="-"
         android:paddingLeft="30sp"/>
 
-<RelativeLayout
-    android:id="@+id/relativeLayout1"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/white"
-    android:layout_gravity="bottom">
-    <Button
-        android:layout_alignParentRight="true"
-        android:id ="@+id/btn_plus"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="edit"
-        android:background="@drawable/button_bg_round"
-        android:padding="10dp"
-        android:layout_margin="20dp"
-        />
 
-</RelativeLayout>
 </LinearLayout>
