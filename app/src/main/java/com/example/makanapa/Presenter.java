@@ -18,5 +18,10 @@ public class Presenter {
         System.out.println(food.getBahan());
         this.listener.setInfo(food);
     }
+    public void addFood(String menu, String des, String bahan, String tag, String langkah, String lokasi){
+        Food food = new Food (menu, des, bahan, tag, langkah, lokasi);
+        this.listener.addLine(food);
+    }
+
     public void closeApplication(){this.listener.closeApplication();}
 }

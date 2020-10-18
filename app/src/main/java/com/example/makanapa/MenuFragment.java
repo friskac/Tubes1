@@ -66,10 +66,16 @@ public class MenuFragment extends Fragment{
             }
         });
 
+
+
         return view;
     }
 
     public void random(){
         menuFragment.adapter.randomFood();
+    }
+
+    public void addLine(Food food){
+        this.adapter.addLine(food);
     }
 }

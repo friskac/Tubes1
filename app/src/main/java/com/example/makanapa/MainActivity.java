@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
         this.lobbyFragment = LobbyFragment.newInstance(this.presenter);
         this.menuFragment = MenuFragment.newInstance(this,presenter, adapter);
         this.infoFragment = InfoFragment.newInstance();
-        this.addPopupFragment = AddPopupFragment.newInstance(this);
+        this.addPopupFragment = AddPopupFragment.newInstance(this, this.presenter);
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.fragment_container, this.infoFragment);
@@ -125,6 +125,14 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
         this.infoFragment.setInfo(food);
         ft.commit();
     }
+
+    @Override
+    public void addLine(Food food) {
+        FragmentTransaction ft = this.fragmentManager.beginTransaction();
+        this.menuFragment.addLine(food);
+        ft.commit();
+    }
+
 
     @Override
     public void closeApplication() {

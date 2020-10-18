@@ -10,5 +10,6 @@ public interface FoodListener {
     void changePage(int page, boolean isPop);
     void showPopup();
     void setInfo(Food food);
+    void addLine(Food food);
     void closeApplication();
 }
