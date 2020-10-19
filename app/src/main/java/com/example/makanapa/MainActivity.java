@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.icu.text.IDNA;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -28,8 +29,10 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
     private FoodListAdapter adapter;
     private LobbyFragment lobbyFragment;
     private InfoFragment infoFragment;
+    private EditFragment editFragment;
     private Stack<Integer> state;
     private int lastState;
+    private Storage storage;
 
 
     @Override
@@ -37,17 +40,21 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.storage = new Storage(this);
         this.state = new Stack<>();
         this.presenter = new Presenter(this);
         this.adapter = new FoodListAdapter(this,this.presenter,this);
         this.lobbyFragment = LobbyFragment.newInstance(this.presenter);
         this.menuFragment = MenuFragment.newInstance(this,presenter, adapter);
-        this.infoFragment = InfoFragment.newInstance();
+        this.infoFragment = InfoFragment.newInstance(this, this.presenter);
+        this.editFragment = EditFragment.newInstance(this,this.presenter);
         this.addPopupFragment = AddPopupFragment.newInstance(this, this.presenter);
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.fragment_container, this.infoFragment);
         ft.hide(this.infoFragment);
+        ft.add(R.id.fragment_container,this.editFragment);
+        ft.hide(this.editFragment);
         ft.add(R.id.fragment_container, this.lobbyFragment).commit();
         this.leftFragment = LeftFragment.newInstance(this,presenter);
 
@@ -82,6 +89,9 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
             if (this.infoFragment.isAdded()) {
                 ft.hide(this.infoFragment);
             }
+            if (this.editFragment.isAdded()){
+                ft.hide(this.editFragment);
+            }
         }
         else if (page == FoodListener.PAGE2){
             if (this.menuFragment.isAdded()){
@@ -95,6 +105,9 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
             }
             if (this.infoFragment.isAdded()) {
                 ft.hide(this.infoFragment);
+            }
+            if (this.editFragment.isAdded()){
+                ft.hide(this.editFragment);
             }
         }
         else if (page == FoodListener.PAGE3){
@@ -110,6 +123,26 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
             if (this.lobbyFragment.isAdded()){
                 ft.hide(this.lobbyFragment);
             }
+            if (this.editFragment.isAdded()){
+                ft.hide(this.editFragment);
+            }
+        }
+        else if (page == FoodListener.PAGE4){
+            if (this.editFragment.isAdded()){
+                ft.show(this.editFragment);
+            }
+            else{
+                ft.add(R.id.fragment_container,this.editFragment).addToBackStack(null);
+            }
+            if (this.menuFragment.isAdded()) {
+                ft.hide(this.menuFragment);
+            }
+            if (this.lobbyFragment.isAdded()){
+                ft.hide(this.lobbyFragment);
+            }
+            if (this.infoFragment.isAdded()){
+                ft.hide(this.infoFragment);
+            }
         }
         ft.commit();
     }
@@ -120,6 +153,13 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
     }
 
     @Override
+    public void addLine(Food food) {
+        FragmentTransaction ft = this.fragmentManager.beginTransaction();
+        this.menuFragment.addLine(food);
+        ft.commit();
+    }
+
+    @Override
     public void setInfo(Food food) {
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         this.infoFragment.setInfo(food);
@@ -127,9 +167,9 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
     }
 
     @Override
-    public void addLine(Food food) {
+    public void changeMenu(Food food) {
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
-        this.menuFragment.addLine(food);
+        this.editFragment.setMenu(food);
         ft.commit();
     }
 
@@ -147,6 +187,20 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
         }
         else {
             closeApplication();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        this.storage.saveAll(this.adapter.listItem);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(this.storage.getMenu().size() != 0) {
+            this.adapter.listItem = this.storage.getMenu();
         }
     }
 }

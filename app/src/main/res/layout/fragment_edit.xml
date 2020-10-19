@@ -10,18 +10,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20sp"
-        android:text="@string/header"
+        android:text="Edit Menu"
         android:textColor="@color/black"
         android:textSize="@dimen/judul_size" />
 
-    <TextView
-        android:id="@+id/tv_menu"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/menu_size"
-        android:padding="@dimen/pad_info"/>
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Menu : "
+            android:textSize="@dimen/menu_size"
+            android:padding="@dimen/pad_info"
+            android:layout_weight="4"/>
+
+        <EditText
+            android:id="@+id/edit_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/des"
+            android:paddingLeft="@dimen/pad_info"
+            android:hint="Tuliskan menu"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -32,7 +49,7 @@
         android:text="@string/des"/>
 
     <EditText
-        android:id="@+id/tv_deskripsi"
+        android:id="@+id/edit_deskripsi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -56,7 +73,7 @@
             android:layout_weight="5"/>
 
         <EditText
-            android:id="@+id/tv_tag"
+            android:id="@+id/edit_tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/des"
@@ -75,7 +92,7 @@
         android:text="@string/bahan"/>
 
     <EditText
-        android:id="@+id/tv_bahan"
+        android:id="@+id/edit_bahan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/des"
@@ -92,7 +109,7 @@
         android:text="@string/langkah"/>
 
     <EditText
-        android:id="@+id/tv_langkah"
+        android:id="@+id/edit_langkah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/des"
@@ -109,10 +126,28 @@
         android:text="@string/lokasi"/>
 
     <EditText
-        android:id="@+id/tv_lokasi"
+        android:id="@+id/edit_lokasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:hint="Tulisan alamat"
         android:paddingLeft="@dimen/pad_info"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/pad_info"
+            android:id="@+id/btn_save"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Save"
+            android:textColor="@color/colorWhite"/>
+
+    </RelativeLayout>
 </LinearLayout>

@@ -23,5 +23,9 @@ public class Presenter {
         this.listener.addLine(food);
     }
 
+    public void changeMenu(Food food){
+        this.listener.changeMenu(food);
+    }
+
     public void closeApplication(){this.listener.closeApplication();}
 }

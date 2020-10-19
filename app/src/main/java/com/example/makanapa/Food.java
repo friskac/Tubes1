@@ -16,7 +16,6 @@ public class Food {
         this.bahan = bahan;
         this.langkah = langkah;
         this.lokasi = lokasi;
-//        this.isFavourite = false;
     }
 
     public String getTitle() {
@@ -67,11 +66,4 @@ public class Food {
         this.lokasi = l;
     }
 
-    public boolean isFavourite() {
-        return isFavourite;
-    }
-
-    public void setFavourite(boolean favourite) {
-        isFavourite = favourite;
-    }
 }
