@@ -16,6 +16,8 @@ public class LeftFragment extends Fragment {
     private FoodListener foodListener;
     private Presenter presenter;
     protected Button btnExit;
+    protected Button btnMenu;
+    protected Button btnHome;
 
     public static LeftFragment newInstance(FoodListener foodListener, Presenter presenter){
         if (leftFragment==null){
@@ -30,6 +32,23 @@ public class LeftFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ){
         View view = inflater.inflate(R.layout.fragment_left, container, false);
         this.btnExit = view.findViewById(R.id.btn_exit);
+        this.btnMenu= view.findViewById(R.id.btn_menu);
+        this.btnHome = view.findViewById(R.id.btn_home);
+        this.btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity m = (MainActivity)getActivity();
+                m.changePage(FoodListener.PAGE1, true);
+            }
+        });
+        this.btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity m = (MainActivity)getActivity();
+                m.changePage(foodListener.PAGE2, true);
+            }
+        });
+
         this.btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
