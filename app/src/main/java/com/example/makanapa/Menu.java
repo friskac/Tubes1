@@ -9,13 +9,5 @@ public class Menu {
                     "rumah makan sunda"),
             new Food("Nasi Goreng", "makanan Indonesia", "Indonesia", "Minyak secukupnya, Nasi, telur, kecap, bawang putih, cabai, garam",
                     "Masak bawang menggunakan minyak dengan api kecil sampai kecoklatan", "warung makan")
-//            new Food("Ayam Goreng"),
-//            new Food("Ayam Goreng"),
-//            new Food("Ayam Goreng"),
-//            new Food("Mie Goreng"),
-//            new Food("Puyunghai"),
-//            new Food("Ayam Goreng"),
-//            new Food("Ayam Goreng"),
-//            new Food("Nasi Goreng")
     };
 }
