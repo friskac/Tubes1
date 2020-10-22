@@ -37,22 +37,23 @@ public class LeftFragment extends Fragment {
         this.btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity m = (MainActivity)getActivity();
-                m.changePage(FoodListener.PAGE1, true);
+                leftFragment.presenter.changePage(FoodListener.PAGE1, true);
+                leftFragment.presenter.closeDrawers();
             }
         });
         this.btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity m = (MainActivity)getActivity();
-                m.changePage(foodListener.PAGE2, true);
+                leftFragment.presenter.changePage(foodListener.PAGE2, true);
+                leftFragment.presenter.closeDrawers();
             }
         });
 
         this.btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               leftFragment.presenter.closeApplication();
+                leftFragment.presenter.closeDrawers();
+                leftFragment.presenter.closeApplication();
             }
         });
 

@@ -15,4 +15,5 @@ public interface FoodListener {
     void addLine(Food food);
     void changeMenu(Food food);
     void closeApplication();
+    void closeDrawers();
 }

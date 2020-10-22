@@ -181,6 +181,11 @@ public class MainActivity extends AppCompatActivity implements FoodListener{
     }
 
     @Override
+    public void closeDrawers() {
+        this.drawer.closeDrawers();
+    }
+
+    @Override
     public void onBackPressed() {
         if(!this.state.isEmpty()){
             changePage(this.state.pop(), true);

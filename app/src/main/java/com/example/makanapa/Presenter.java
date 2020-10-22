@@ -28,4 +28,8 @@ public class Presenter {
     }
 
     public void closeApplication(){this.listener.closeApplication();}
+
+    public void closeDrawers(){
+        this.listener.closeDrawers();
+    }
 }
