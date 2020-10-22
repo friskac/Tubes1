@@ -127,6 +127,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_cancel"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
                 android:text="@string/btn_cancel"/>
 
             <Space
@@ -138,6 +140,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_add"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
                 android:text="@string/btn_add"/>
 
         </LinearLayout>
